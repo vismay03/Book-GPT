@@ -23,7 +23,7 @@ export default function Home() {
     // Set loading state
     setLoading(true);
     try {
-      const res = await fetch("api/book", {
+      const res = await fetch("/api/book", {
         method: "post",
         headers: {
           "Content-type": "application/json",

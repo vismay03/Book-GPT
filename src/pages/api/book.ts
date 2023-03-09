@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { OpenAIApi } from 'openai';
 import { configuration } from '../../utils/constants';
 type Data = {
-  result: string
+  name: string
 }
 
 const openai = new OpenAIApi(configuration);
@@ -35,7 +35,5 @@ export default async function handler(
     throw new Error('No suggestion found');
   }
 
-  res.status(200).json({
-    result: suggestion
-  });
+  res.status(200).json({ result:  JSON.parse( JSON.stringify(suggestion)) })
 }
