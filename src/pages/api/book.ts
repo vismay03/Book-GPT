@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { OpenAIApi } from 'openai';
 import { configuration } from '../../utils/constants';
 type Data = {
-  name: string
+  result: string
 }
 
 const openai = new OpenAIApi(configuration);
